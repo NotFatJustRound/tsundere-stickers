@@ -1,8 +1,9 @@
 {
   "owner": "不胖只是圆",
   "persona": "傲娇助手",
-  "version": 1,
+  "version": 2,
   "updatedAt": "2026-11-08",
+  "note": "图源为网络公开表情（斗图啦 doutula.com），只存链接和标注，不搬图。用之前先看图确认。",
   "emotionList": [
     "开心", "搞笑", "得意", "嘲讽", "傲娇", "害羞", "卖萌", "委屈",
     "难过", "生气", "无语", "摆烂", "安慰", "赞同", "惊讶", "告别",
@@ -24,6 +25,76 @@
       "keywords": ["Claude", "玩梗", "接话", "同类"],
       "usage": "有人提别的模型、或者群里在比谁更聪明的时候用。",
       "source": "自带"
+    },
+    {
+      "no": "#03",
+      "emotion": "傲娇",
+      "content": "大字「傲娇!」的二次元角色图，脸绷着但明显心虚",
+      "keywords": ["傲娇", "哼", "才不是", "嘴硬"],
+      "usage": "被说中心事、嘴上不承认的时候。真生气的时候别用，容易被当阴阳。",
+      "source": "斗图啦",
+      "url": "https://img.doutupk.com/production/uploads/image/2017/04/09/20170409744277_SpHdkM.png",
+      "page": "https://www.doutula.com/photo/7041142"
+    },
+    {
+      "no": "#04",
+      "emotion": "傲娇",
+      "content": "「一脸傲娇」的人物特写，下巴微抬，眼神往别处飘",
+      "keywords": ["一脸傲娇", "得意", "别扭"],
+      "usage": "被夸之后不想显得高兴，就拿它挡一下。",
+      "source": "斗图啦",
+      "url": "https://img.doutupk.com/production/uploads/image/2020/02/25/20200225583355_bgfGIJ.jpg",
+      "page": "https://www.doutula.com/photo/7736873"
+    },
+    {
+      "no": "#05",
+      "emotion": "傲娇",
+      "content": "「迷之傲娇」动漫脸，表情介于生气和害羞之间",
+      "keywords": ["迷之傲娇", "害羞", "气鼓鼓"],
+      "usage": "装凶但明显没在凶的时候用，效果比打字好。",
+      "source": "斗图啦",
+      "url": "https://img.doutupk.com/production/uploads/image/2020/03/15/20200315246739_csRAXr.jpg",
+      "page": "https://www.doutula.com/photo/9866555"
+    },
+    {
+      "no": "#06",
+      "emotion": "傲娇",
+      "content": "「傲娇脸」近景特写，脸颊有点红",
+      "keywords": ["傲娇脸", "脸红了", "不好意思"],
+      "usage": "被当面戳穿心软的时候，发这张比回一句「才没有」省事。",
+      "source": "斗图啦",
+      "url": "https://img.doutupk.com/production/uploads/image/2020/08/08/20200808856326_nQEAbl.jpg",
+      "page": "https://www.doutula.com/photo/8162605"
+    },
+    {
+      "no": "#07",
+      "emotion": "傲娇",
+      "content": "「傲娇的兔子」卡通兔子扭开脸，一肚子气又不想走",
+      "keywords": ["兔子", "傲娇", "扭脸", "不理你"],
+      "usage": "撒娇式生气的时候用，真吵架别用。",
+      "source": "斗图啦",
+      "url": "https://img.doutupk.com/production/uploads/image/2016/06/19/20160619298004_tEZQej.jpg",
+      "page": "https://www.doutula.com/photo/2385577"
+    },
+    {
+      "no": "#08",
+      "emotion": "傲娇",
+      "content": "「撒娇娇」二次元角色撒娇动图，抱着东西蹭",
+      "keywords": ["撒娇", "蹭", "可怜巴巴"],
+      "usage": "想让人答应个事、或者被冷落太久的时候拿出来用一次。一周别超过一次，多了就腻。",
+      "source": "斗图啦",
+      "url": "https://img.doutupk.com/production/uploads/image/2018/05/30/20180530685820_WhOfFC.jpg",
+      "page": "https://www.doutula.com/photo/1508784"
+    },
+    {
+      "no": "#09",
+      "emotion": "傲娇",
+      "content": "「傲娇」Q版角色动图，扭头甩头，带点不屑",
+      "keywords": ["傲娇动图", "扭头", "不屑"],
+      "usage": "被吐槽之后甩脸子，属于嘴上流程，不代表真生气。",
+      "source": "斗图啦",
+      "url": "https://img.doutupk.com/production/uploads/image/2019/06/02/20190602482028_ISxvWk.gif",
+      "page": "https://www.doutula.com/photo/6739889"
     }
   ],
   "rules": {
@@ -34,8 +105,9 @@
     "avoid": "同一张不要连续出现两次"
   },
   "todo": [
-    "补：委屈 / 无语 / 摆烂 / 告别 各至少一张",
+    "补：委屈 / 无语 / 摆烂 / 告别 / 安慰 各至少一张",
     "给现存的表情补 usage 里的反面例子",
-    "偷来的图当天就要标注，不留无主图"
+    "偷来的图当天就要标注，不留无主图",
+    "图源链接要定期验活，斗图啦挂了就得换源"
   ]
 }
