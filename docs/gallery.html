@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>tsundere-stickers · 表情图鉴</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 24px 18px 64px;
+    font: 15px/1.6 -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+    background: #faf8f6; color: #2b2b2b;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { background: #17171a; color: #e6e6e6; }
+    .card { background: #212127 !important; border-color: #33333d !important; }
+    select, input { background: #2a2a32; color: #e6e6e6; border-color: #3a3a44; }
+  }
+  header { max-width: 1100px; margin: 0 auto 20px; }
+  h1 { font-size: 20px; margin: 0 0 6px; letter-spacing: .5px; }
+  .sub { font-size: 13px; opacity: .65; margin: 0; }
+  .bar {
+    max-width: 1100px; margin: 0 auto 22px; display: flex; flex-wrap: wrap;
+    gap: 10px; align-items: center;
+  }
+  select, input {
+    padding: 7px 10px; border: 1px solid #ddd8d2; border-radius: 8px;
+    background: #fff; font: inherit;
+  }
+  input { min-width: 200px; flex: 1; }
+  .count { font-size: 13px; opacity: .6; margin-left: auto; }
+  .grid {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; gap: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  }
+  .card {
+    background: #fff; border: 1px solid #e9e4de; border-radius: 12px;
+    overflow: hidden; display: flex; flex-direction: column;
+    transition: transform .12s ease, box-shadow .12s ease;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,.08); }
+  .thumb {
+    height: 168px; display: flex; align-items: center; justify-content: center;
+    background: repeating-conic-gradient(#0000 0% 25%, #0000000a 0% 50%) 0 0/16px 16px;
+    padding: 10px;
+  }
+  .thumb img { max-width: 100%; max-height: 148px; object-fit: contain; }
+  .meta { padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 6px; }
+  .row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .no { font: 600 13px/1 ui-monospace, Consolas, monospace; opacity: .75; }
+  .tag {
+    font-size: 11px; padding: 2px 7px; border-radius: 99px;
+    background: #f0e7f8; color: #7b4ba8;
+  }
+  .tag.lic-open { background: #e2f5e8; color: #2b7a45; }
+  .tag.lic-net  { background: #fdf0dc; color: #96651b; }
+  .tag.lic-own  { background: #e6eeff; color: #3457a8; }
+  .desc { font-size: 12.5px; opacity: .8; line-height: 1.5; }
+  .act { display: flex; gap: 8px; margin-top: 2px; }
+  .act a {
+    font-size: 12px; text-decoration: none; padding: 3px 9px; border-radius: 7px;
+    border: 1px solid #ddd8d2; color: inherit; opacity: .8;
+  }
+  .act a:hover { opacity: 1; border-color: #c9c1b8; }
+  .empty { text-align: center; opacity: .5; padding: 60px 0; grid-column: 1/-1; }
+  footer { max-width: 1100px; margin: 40px auto 0; font-size: 12px; opacity: .5; }
+  code { font-family: ui-monospace, Consolas, monospace; font-size: 12px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>tsundere-stickers · 表情图鉴</h1>
+  <p class="sub">按情绪筛、按词搜；图不在仓库里，直接从原站取（版权还是原作者的）。</p>
+</header>
+
+<div class="bar">
+  <select id="emo"><option value="">全部情绪</option></select>
+  <select id="lic">
+    <option value="">全部授权</option>
+    <option value="open">open 作者开放</option>
+    <option value="net">net 网络公开</option>
+    <option value="own">own 自带</option>
+  </select>
+  <input id="q" type="search" placeholder="搜关键词 / 画面 / 用法…">
+  <span class="count" id="count"></span>
+</div>
+
+<main class="grid" id="grid"></main>
+<footer>
+  数据来自仓库根目录的 <code>stickers.json</code>。命令行取图：<code>python tools/sticker.py get "#10"</code>
+</footer>
+
+<script>
+const grid = document.getElementById('grid');
+const emoSel = document.getElementById('emo');
+const licSel = document.getElementById('lic');
+const qBox = document.getElementById('q');
+const countEl = document.getElementById('count');
+let all = [];
+
+function el(tag, cls, text) {
+  const n = document.createElement(tag);
+  if (cls) n.className = cls;
+  if (text != null) n.textContent = text;
+  return n;
+}
+
+function render() {
+  const emo = emoSel.value;
+  const lic = licSel.value;
+  const q = qBox.value.trim().toLowerCase();
+  const rows = all.filter(s => {
+    if (emo && s.emotion !== emo) return false;
+    if (lic && s.license !== lic) return false;
+    if (q) {
+      const blob = [s.no, s.emotion, s.content, s.usage, (s.keywords || []).join(' ')]
+        .join(' ').toLowerCase();
+      if (!blob.includes(q)) return false;
+    }
+    return true;
+  });
+
+  grid.replaceChildren();
+  countEl.textContent = rows.length + ' / ' + all.length + ' 张';
+
+  if (!rows.length) {
+    grid.appendChild(el('div', 'empty', '没挑到，换个词试试。'));
+    return;
+  }
+
+  for (const s of rows) {
+    const card = el('div', 'card');
+
+    const thumb = el('div', 'thumb');
+    const img = el('img');
+    img.alt = s.content || s.no;
+    img.loading = 'lazy';
+    img.referrerPolicy = 'no-referrer';
+    if (s.url) {
+      img.src = s.url;
+      img.onerror = () => {
+        thumb.replaceChildren(el('div', 'desc', '图挂了，去源页看 ↗'));
+      };
+    } else {
+      thumb.replaceChildren(el('div', 'desc', '没有直链，只有源页'));
+    }
+    thumb.appendChild(img);
+    card.appendChild(thumb);
+
+    const meta = el('div', 'meta');
+    const row = el('div', 'row');
+    row.appendChild(el('span', 'no', s.no || '?'));
+    row.appendChild(el('span', 'tag', s.emotion || '?'));
+    row.appendChild(el('span', 'tag lic-' + (s.license || ''), s.license || '-'));
+    meta.appendChild(row);
+
+    meta.appendChild(el('div', 'desc', s.content || ''));
+    if (s.usage) meta.appendChild(el('div', 'desc', '用法：' + s.usage));
+
+    const act = el('div', 'act');
+    if (s.url) {
+      const a = el('a', null, '看大图');
+      a.href = s.url; a.target = '_blank'; a.rel = 'noopener noreferrer';
+      act.appendChild(a);
+    }
+    if (s.page) {
+      const b = el('a', null, '源页');
+      b.href = s.page; b.target = '_blank'; b.rel = 'noopener noreferrer';
+      act.appendChild(b);
+    }
+    if (act.children.length) meta.appendChild(act);
+
+    card.appendChild(meta);
+    grid.appendChild(card);
+  }
+}
+
+fetch('../stickers.json', { cache: 'no-cache' })
+  .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+  .then(data => {
+    all = data.stickers || [];
+    const list = data.emotionList || [...new Set(all.map(s => s.emotion))];
+    for (const e of list) {
+      const o = el('option', null, e);
+      o.value = e;
+      emoSel.appendChild(o);
+    }
+    render();
+  })
+  .catch(err => {
+    grid.replaceChildren(el('div', 'empty',
+      '读不到 stickers.json（' + err.message + '）。直接开本地文件会这样，起个静态服务器或放到 Pages 上就行。'));
+  });
+
+emoSel.addEventListener('change', render);
+licSel.addEventListener('change', render);
+qBox.addEventListener('input', render);
+</script>
+</body>
+</html>
