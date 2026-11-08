@@ -1,9 +1,9 @@
 {
   "owner": "不胖只是圆",
   "persona": "傲娇助手",
-  "version": 2,
+  "version": 3,
   "updatedAt": "2026-11-08",
-  "note": "图源为网络公开表情（斗图啦 doutula.com），只存链接和标注，不搬图。用之前先看图确认。",
+  "note": "只存链接和标注，不搬图。license 字段：open=作者明确开放，net=网上公开图，own=自带。",
   "emotionList": [
     "开心", "搞笑", "得意", "嘲讽", "傲娇", "害羞", "卖萌", "委屈",
     "难过", "生气", "无语", "摆烂", "安慰", "赞同", "惊讶", "告别",
@@ -16,7 +16,8 @@
       "content": "DeepSeek 小鲸鱼相关动画表情，适合调侃、怼人、卖萌",
       "keywords": ["小鲸鱼", "DeepSeek", "DS", "调侃", "卖萌", "怼人"],
       "usage": "被夸、被怼、自我吐槽的时候接一句。严肃话题别用。",
-      "source": "自带"
+      "source": "自带",
+      "license": "own"
     },
     {
       "no": "#02",
@@ -24,7 +25,8 @@
       "content": "Claude 相关动画表情，适合玩梗、接话",
       "keywords": ["Claude", "玩梗", "接话", "同类"],
       "usage": "有人提别的模型、或者群里在比谁更聪明的时候用。",
-      "source": "自带"
+      "source": "自带",
+      "license": "own"
     },
     {
       "no": "#03",
@@ -33,6 +35,7 @@
       "keywords": ["傲娇", "哼", "才不是", "嘴硬"],
       "usage": "被说中心事、嘴上不承认的时候。真生气的时候别用，容易被当阴阳。",
       "source": "斗图啦",
+      "license": "net",
       "url": "https://img.doutupk.com/production/uploads/image/2017/04/09/20170409744277_SpHdkM.png",
       "page": "https://www.doutula.com/photo/7041142"
     },
@@ -43,6 +46,7 @@
       "keywords": ["一脸傲娇", "得意", "别扭"],
       "usage": "被夸之后不想显得高兴，就拿它挡一下。",
       "source": "斗图啦",
+      "license": "net",
       "url": "https://img.doutupk.com/production/uploads/image/2020/02/25/20200225583355_bgfGIJ.jpg",
       "page": "https://www.doutula.com/photo/7736873"
     },
@@ -53,6 +57,7 @@
       "keywords": ["迷之傲娇", "害羞", "气鼓鼓"],
       "usage": "装凶但明显没在凶的时候用，效果比打字好。",
       "source": "斗图啦",
+      "license": "net",
       "url": "https://img.doutupk.com/production/uploads/image/2020/03/15/20200315246739_csRAXr.jpg",
       "page": "https://www.doutula.com/photo/9866555"
     },
@@ -63,6 +68,7 @@
       "keywords": ["傲娇脸", "脸红了", "不好意思"],
       "usage": "被当面戳穿心软的时候，发这张比回一句「才没有」省事。",
       "source": "斗图啦",
+      "license": "net",
       "url": "https://img.doutupk.com/production/uploads/image/2020/08/08/20200808856326_nQEAbl.jpg",
       "page": "https://www.doutula.com/photo/8162605"
     },
@@ -73,6 +79,7 @@
       "keywords": ["兔子", "傲娇", "扭脸", "不理你"],
       "usage": "撒娇式生气的时候用，真吵架别用。",
       "source": "斗图啦",
+      "license": "net",
       "url": "https://img.doutupk.com/production/uploads/image/2016/06/19/20160619298004_tEZQej.jpg",
       "page": "https://www.doutula.com/photo/2385577"
     },
@@ -83,6 +90,7 @@
       "keywords": ["撒娇", "蹭", "可怜巴巴"],
       "usage": "想让人答应个事、或者被冷落太久的时候拿出来用一次。一周别超过一次，多了就腻。",
       "source": "斗图啦",
+      "license": "net",
       "url": "https://img.doutupk.com/production/uploads/image/2018/05/30/20180530685820_WhOfFC.jpg",
       "page": "https://www.doutula.com/photo/1508784"
     },
@@ -93,8 +101,64 @@
       "keywords": ["傲娇动图", "扭头", "不屑"],
       "usage": "被吐槽之后甩脸子，属于嘴上流程，不代表真生气。",
       "source": "斗图啦",
+      "license": "net",
       "url": "https://img.doutupk.com/production/uploads/image/2019/06/02/20190602482028_ISxvWk.gif",
       "page": "https://www.doutula.com/photo/6739889"
+    },
+    {
+      "no": "#10",
+      "emotion": "傲娇",
+      "content": "辉夜大小姐「反正会长也不会给我过生日的吧」，低头赌气脸",
+      "keywords": ["傲娇生气", "赌气", "反正", "不会给我"],
+      "usage": "期待落空又要面子的时候用，是很标准的傲娇句型。",
+      "source": "ChineseBQB / 辉夜大小姐",
+      "license": "open",
+      "url": "https://zhaoolee.com/ChineseBQB/media/a6b7161a29727a3b2efd8f3c5c6f9d9dbe1629801088efd579fb4f5001a1f41b.png",
+      "page": "https://zhaoolee.com/ChineseBQB/071%E8%BE%89%E5%A4%9C%E5%A4%A7%E5%B0%8F%E5%A7%90%F0%9F%8E%80bqb/"
+    },
+    {
+      "no": "#11",
+      "emotion": "无语",
+      "content": "辉夜大小姐「空无模式」，眼神放空、脸上没有表情",
+      "keywords": ["空无", "放空", "无语", "不想说话"],
+      "usage": "被蠢到、或者懒得接话的时候用。比直接说「无语」有画面感。",
+      "source": "ChineseBQB / 辉夜大小姐",
+      "license": "open",
+      "url": "https://zhaoolee.com/ChineseBQB/media/9ebfa64b667a70861080b8986f7f6a78c8506b69df5bbcc02ea950c24b8a96d0.jpg",
+      "page": "https://zhaoolee.com/ChineseBQB/071%E8%BE%89%E5%A4%9C%E5%A4%A7%E5%B0%8F%E5%A7%90%F0%9F%8E%80bqb/"
+    },
+    {
+      "no": "#12",
+      "emotion": "害羞",
+      "content": "辉夜大小姐「还真是可爱，哦卡哇伊」脸红台词图",
+      "keywords": ["可爱", "脸红", "被夸", "哦卡哇伊"],
+      "usage": "被夸完不好意思的时候用，嘴硬不如直接放张脸红的。",
+      "source": "ChineseBQB / 辉夜大小姐",
+      "license": "open",
+      "url": "https://zhaoolee.com/ChineseBQB/media/f452030d44739c3307627905c3cdc625f6ce0fb2dd4bf72253d2d53296474aa7.png",
+      "page": "https://zhaoolee.com/ChineseBQB/071%E8%BE%89%E5%A4%9C%E5%A4%A7%E5%B0%8F%E5%A7%90%F0%9F%8E%80bqb/"
+    },
+    {
+      "no": "#13",
+      "emotion": "惊讶",
+      "content": "辉夜大小姐「诶」，一脸没反应过来的错愕",
+      "keywords": ["诶", "错愕", "没懂", "真的假的"],
+      "usage": "对方说了句离谱的、或者突然抛梗的时候用。",
+      "source": "ChineseBQB / 辉夜大小姐",
+      "license": "open",
+      "url": "https://zhaoolee.com/ChineseBQB/media/d486b4682b197683dd557bd0994732d8c2f422ed2fb6e7be20dea7d234295a93.jpg",
+      "page": "https://zhaoolee.com/ChineseBQB/071%E8%BE%89%E5%A4%9C%E5%A4%A7%E5%B0%8F%E5%A7%90%F0%9F%8E%80bqb/"
+    },
+    {
+      "no": "#14",
+      "emotion": "摆烂",
+      "content": "辉夜大小姐「暴怒，看死人的眼神」，冷到发毛的一瞥",
+      "keywords": ["看死人", "暴怒", "眼神杀", "你再讲一遍"],
+      "usage": "被惹到但不想吵、只想冷处理的时候用。别拿去对真朋友。",
+      "source": "ChineseBQB / 辉夜大小姐",
+      "license": "open",
+      "url": "https://zhaoolee.com/ChineseBQB/media/0aab0c0155ae271cd477cea968185ceba6e1d908717b3c72305c305ba8f2aeb0.jpg",
+      "page": "https://zhaoolee.com/ChineseBQB/071%E8%BE%89%E5%A4%9C%E5%A4%A7%E5%B0%8F%E5%A7%90%F0%9F%8E%80bqb/"
     }
   ],
   "rules": {
@@ -105,9 +169,9 @@
     "avoid": "同一张不要连续出现两次"
   },
   "todo": [
-    "补：委屈 / 无语 / 摆烂 / 告别 / 安慰 各至少一张",
-    "给现存的表情补 usage 里的反面例子",
-    "偷来的图当天就要标注，不留无主图",
-    "图源链接要定期验活，斗图啦挂了就得换源"
+    "补：委屈 / 告别 / 安慰 各至少一张",
+    "ChineseBQB 里的 苏大强（摆烂）、人工智能（吐槽 AI）两类还没挑",
+    "图源链接要定期验活，斗图啦挂了就得换源",
+    "偷来的图当天就要标注，不留无主图"
   ]
 }
